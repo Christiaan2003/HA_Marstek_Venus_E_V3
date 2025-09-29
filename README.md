@@ -1,2 +1,2 @@
-# HA_Marstek_Venus_V3
-Home Assistant custom integration for Marstek Venus V3 battery on local-API
+# HA_Marstek_Venus_E_V3
+Home Assistant custom integration for Marstek Venus E V3 battery on local-API
