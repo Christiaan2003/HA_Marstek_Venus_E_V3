@@ -1,4 +1,13 @@
-Home Assistant – Marstek Venus E V3.0 Local API Integration
+******Update Notice:
+The integration is currently behind schedule due to issues with the Open API endpoint.
+The following request does not return a valid response:{
+  "id": 1,
+  "method": "Es.GetStatus",
+  "params": {
+    "id": 0
+  }
+}
+Home Assistant – Marstek Venus E V3.0 Local API As a result, development and testing have been delayed until the API behaves as expecteAs
 
 This repository is dedicated to a custom Home Assistant integration for the Marstek Venus E V3.0 home battery system.  
 The integration communicates with the battery through the Local API over UDP, which can be activated via the Marstek mobile app.
