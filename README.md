@@ -1,46 +1,42 @@
-******Update Notice:
-The integration is currently behind schedule due to issues with the Open API endpoint.
-The following request does not return a valid response:{
+
+Marstek Venus E v3 Home Assistant Integration (Discontinued)
+
+Project Status: Development Stopped
+
+This repository is no longer being developed.  
+After extensive testing, I found that the Marstek Venus E v3 Open not is currently not returning valid responses for certain requests — most notably:
+
+```json
+{
   "id": 1,
   "method": "Es.GetStatus",
   "params": {
     "id": 0
   }
 }
-Home Assistant – Marstek Venus E V3.0 Local API As a result, development and testing have been delayed until the API behaves as expecteAs
+````
 
-This repository is dedicated to a custom Home Assistant integration for the Marstek Venus E V3.0 home battery system.  
-The integration communicates with the battery through the Local API over UDP, which can be activated via the Marstek mobile app.
+Both firmware versions v137 and v139 fail to provide any response to this method, even though all other API calls work correctly.
+This appears to be a firmware-level issue, not a problem with the integration code itself.
 
-Important:
+I have already performed multiple resets and factory restores without success, and v139 seems to be the latest firmware currently available from Marstek.
 
-* This integration does not use the RS485 port.  
-* Once the Local API is enabled, the communication is functionally equivalent to RS485 (Modbus), but it works over your local network (LAN/WiFi).  
-* This avoids the need for RS485 adapters, ESP boards, or extra cabling.  
+---
 
-Current Status
+Recommended Alternative
 
-This project is still under development.  
-The goal is to provide full support for reading battery data directly in Home Assistant, including integration with the Energy Dashboard.
+Development has been discontinued here because https://github.com/jaapp/ha-marstek provides a much more advanced and actively maintained integration for the Marstek Venus E v3.
 
-API Activation (Required)
+Jaap has done excellent work on improving communication with the API, and I fully trust his approach and future updates.
+For the latest and most reliable integration, please visit and support his project instead.
 
-To use this integration in the future, you must first ensure that the Local API is enabled on your Marstek Venus E V3.0:
+---
 
-1. Open the Marstek app.  
-2. Go to Feedback / Support.  
-3. Request a firmware update (minimum V137 or newer).  
-4. Ask support to activate the Local API for your device.  
+Final NNote
+Thanks to everyone who followed or tested this integration during development.
+I truly appreciate the interest and feedback from the community.
+From this point on, all future users are kindly referred tto Jaap’s rrepositor for continued updates and support.
 
-Once enabled, a new menu item will appear in the app:  
-Settings → Advanced Functions → Local API  
-Here you can toggle the Local API and set the UDP port (default 30000).  
+— Christiaan2003
 
-Example request message (max 500 characters)
 
-Hello Marstek team, thank you for the firmware updates. Could you please activate the Local API for my Venus E V3.0 battery (S/N: XXXXX)? I would like to use the UDP Local API on port 30000 for integration with my smart home system. Best regards.
-
-Note
-
-This repository currently serves as a development base and documentation hub.  
-As the integration evolves, installation and configuration details will be added.
